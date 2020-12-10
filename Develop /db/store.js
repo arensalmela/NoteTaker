@@ -1,3 +1,5 @@
+//Received help from my tutor, Jerrica VanAlstne on this section
+
 const fs = require("fs");
 const util = require("util");
 const readFile = util.promisify(fs.readFile);
@@ -6,6 +8,9 @@ const uuidv1 = require("uuidv1");
 
 class Store {
   read() {
+    readFile("db/db.json", "utf8").then((data) => {
+      console.log(data);
+    });
     return readFile("db/db.json", "utf8");
   }
   write(notes) {
